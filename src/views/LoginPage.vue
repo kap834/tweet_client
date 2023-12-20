@@ -3,20 +3,23 @@
         <div :style="{ background: bgColor }"
             class="welcome w-full h-screen fixed bg-black flex justify-center items-center">
             <div v-if="status" class="bg-black w-[600px] fixed h-[85%] rounded-xl z-10">
-                <button @click="close()" class="absolute top-2 left-2 text-white">
-                    close
+                <button @click="close()" class="absolute top-5 left-5 text-white text-2xl rounded-full hover:bg-gray-800 w-9 h-9">
+                    <i class="fa-solid fa-xmark"></i>
                 </button>
-                <div class="box px-[5rem] py-[4rem]">
-                    <h1 class="text-white font-bold text-3xl mb-6">
-                        Create your account
-                    </h1>
-                    <div class="mb-4">
-                        <input :style="{ 'border-color': nameError }" v-model="user.name" type="text" placeholder="Name"
-                            class="w-full outline-none py-4 px-2 text-white font-medium rounded-lg bg-black border border-gray-800" />
-                    </div>
-                    <div class="mb-12">
-                        <input :style="{ 'border-color': emailError }" v-model="user.email" type="email" placeholder="Email"
-                            class="w-full outline-none  py-4 px-2 text-white font-medium rounded-lg bg-black border border-gray-800" />
+                <div class="box px-[5rem] pt-[4rem] pb-[2rem] flex flex-col justify-between h-full">
+                    <div class="">
+                        <h1 class="text-white font-bold text-3xl mb-6">
+                            Create your account
+                        </h1>
+                        <div class="mb-4">
+                            <input :style="{ 'border-color': nameError }" v-model="user.name" type="text" placeholder="Name"
+                                class="w-full outline-none py-4 px-2 text-white font-medium rounded-lg bg-black border border-gray-800" />
+                        </div>
+                        <div class="">
+                            <input :style="{ 'border-color': emailError }" v-model="user.email" type="email"
+                                placeholder="Email"
+                                class="w-full outline-none  py-4 px-2 text-white font-medium rounded-lg bg-black border border-gray-800" />
+                        </div>
                     </div>
                     <div class="date">
                         <p class="font-semibold text-white mb-1">Date of birth <span
@@ -52,20 +55,20 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="btn w-full flex justify-center px-[5rem] mt-8">
-                    <button @click="nextPage()"
-                        class="w-full font-bold py-4 rounded-[2rem] bg-white text-black hover:bg-gray-200">
-                        Next
-                    </button>
+                    <div class="btn w-full flex justify-center mt-8">
+                        <button @click="nextPage()"
+                            class="w-full font-bold py-4 rounded-[2rem] bg-white text-black hover:bg-gray-200">
+                            Next
+                        </button>
+                    </div>
                 </div>
             </div>
 
             <div v-if="next" class="bg-black w-[600px] fixed h-[85%] rounded-xl z-10">
-                <button @click="cancel()" class="absolute top-2 left-2 text-white">
-                    close
+                <button @click="close()" class="absolute top-5 left-5 text-white text-2xl rounded-full hover:bg-gray-800 w-9 h-9">
+                    <i class="fa-solid fa-xmark"></i>
                 </button>
-                <div class="box px-[5rem] py-[4rem] flex flex-col justify-between h-full">
+                <div class="box px-[5rem] pt-[4rem] pb-[2rem] flex flex-col justify-between h-full">
                     <div class="">
                         <h1 class="text-white font-bold text-3xl mb-6">
                             Create your password
@@ -74,7 +77,7 @@
                             placeholder="Password"
                             class="w-full outline-none mb-4 py-4 px-2 text-white font-medium rounded-lg bg-black border border-gray-800" />
                         <div class="mb-12">
-                            <input :style="{ 'border-color': conError }" v-model="user.confirm_assword" type="password"
+                            <input :style="{ 'border-color': conError }" v-model="user.confirm_password" type="password"
                                 placeholder="Confirm Password"
                                 class="w-full outline-none py-4 px-2 text-white font-medium rounded-lg bg-black border border-gray-800" />
                             <small v-if="statusPass" class=" text-red-500 text-xs">Password does not match</small>
@@ -88,6 +91,37 @@
                         <button @click="register()"
                             class="w-full font-bold py-4 rounded-[2rem] bg-white text-black hover:bg-gray-200">
                             Create
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div v-if="signInPage" class="bg-black w-[600px] fixed h-[85%] rounded-xl z-10">
+                <button @click="close()" class="absolute top-5 left-5 text-white text-2xl rounded-full hover:bg-gray-800 w-9 h-9">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="box px-[5rem] pb-[2rem] pt-[4rem] flex flex-col justify-between h-full">
+                    <div class="">
+                        <h1 class="text-white font-bold text-3xl mb-6">
+                            Sing in your account
+                        </h1>
+                        <input :style="{ 'border-color': passError }" v-model="user.email" type="email" placeholder="Email"
+                            class="w-full outline-none mb-4 py-4 px-2 text-white font-medium rounded-lg bg-black border border-gray-800" />
+                        <div class="mb-12">
+                            <input :style="{ 'border-color': conError }" v-model="user.password" type="password"
+                                placeholder="password"
+                                class="w-full outline-none py-4 px-2 text-white font-medium rounded-lg bg-black border border-gray-800" />
+                            <small v-if="statusPass" class=" text-red-500 text-xs">Password does not match</small>
+                        </div>
+                    </div>
+                    <div class="btn w-full flex flex-col justify-center">
+                        <div class="flex gap-1 my-2">
+                            <input type="checkbox" class=" bg-sky-500 w-4">
+                            <p class="text-gray-200 text-[14px]">Remember Me</p>
+                        </div>
+                        <button @click="logIn()"
+                            class="w-full font-bold py-4 rounded-[2rem] bg-white text-black hover:bg-gray-200">
+                            Sign In
                         </button>
                     </div>
                 </div>
@@ -131,7 +165,7 @@
                         </div>
                         <div class="sign-in w-[50%] flex flex-col gap-2 mt-[3rem]">
                             <h1 class="font-bold mb-2">Already have account?</h1>
-                            <button
+                            <button @click="logInPage()"
                                 class=" bg-transparent hover:bg-gray-900 text-sky-500 rounded-[2rem] py-2 font-bold border border-gray-600">
                                 Sign in
                             </button>
@@ -145,6 +179,8 @@
 
 <script>
 import { ref } from "vue";
+import axios from 'axios'
+import { mapGetters } from 'vuex'
 export default {
     name: "LoginPage",
     data() {
@@ -161,9 +197,13 @@ export default {
                 name: '',
                 email: '',
                 password: '',
-                confirm_assword: '',
+                confirm_password: '',
             },
+            signInPage: false
         };
+    },
+    computed: {
+        ...mapGetters(['getUser', 'getToken'])
     },
     methods: {
         createAccount() {
@@ -171,10 +211,8 @@ export default {
             this.bgColor = ref("#36454F");
         },
         close() {
-            this.status = false;
-            this.bgColor = "";
-            this.user.name = ''
-            this.user.email = ''
+            this.$router.push('/login')
+            location.reload()
         },
         nextPage() {
             if (this.user.name != "" && this.user.email != "") {
@@ -184,23 +222,50 @@ export default {
             this.nameError = this.user.name == "" ? ref('red') : ''
             this.emailError = this.user.email == "" ? ref('red') : ''
         },
-        cancel() {
-            this.close()
-            this.next = false;
-            this.user.password = ''
-            this.user.confirm_assword = ''
-        },
         register() {
-            if (this.user.password != "" && this.user.confirm_assword != "") {
-                if (this.user.password == this.user.confirm_assword) {
+            if (this.user.password != "" && this.user.confirm_password != "") {
+                if (this.user.password == this.user.confirm_password) {
                     this.statusPass = false
-                    console.log('create success')
+                    axios.post('http://localhost:8000/api/user/register', this.user)
+                        .then(res => {
+                            this.storeData(res)
+                            let token = localStorage.getItem('token')
+                            if (token) {
+                                this.$router.push('/home')
+                            } else {
+                                this.close()
+                            }
+                        });
                 } else {
                     this.statusPass = true
                 }
             }
             this.passError = this.user.password == "" ? ref('red') : ''
-            this.conError = this.user.confirm_assword == "" ? ref('red') : ''
+            this.conError = this.user.confirm_password == "" ? ref('red') : ''
+        },
+        logInPage() {
+            this.signInPage = true
+            this.bgColor = ref("#36454F");
+        },
+        logIn() {
+            this.passError = this.user.email == "" ? ref('red') : ''
+            this.conError = this.user.password == "" ? ref('red') : ''
+
+            axios.post('http://localhost:8000/api/user/login', { email: this.user.email, password: this.user.password })
+                .then(res => {
+                    this.storeData(res);
+                    let token = localStorage.getItem('token')
+                    if (token === 'null') {
+                        this.close()
+                    } else {
+                        this.$router.push('/home')
+                    }
+                });
+        },
+        storeData(res) {
+            this.$store.dispatch('userData', res.data.user);
+            this.$store.dispatch('userToken', res.data.token);
+            localStorage.setItem('token', this.getToken)
         }
     },
 };
