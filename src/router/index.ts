@@ -38,7 +38,11 @@ router.beforeEach((to,from,next)=>{
   if(to.meta.requiresAuth){
     const token = localStorage.getItem('token')
     if(token){
-      next()
+      if(token != 'null'){
+        next()
+      }else{
+        next('/login')
+      }
     }else{
       next('/login')
     }
@@ -51,7 +55,11 @@ router.beforeEach((to,from,next)=>{
   if(to.meta.noAuth){
     const token = localStorage.getItem('token')
     if(token){
-      next('/home')
+      if(token != 'null'){
+        next('/home')
+      }else{
+        next()
+      }
     }else{
       next()
     }

@@ -112,6 +112,7 @@
                                 placeholder="password"
                                 class="w-full outline-none py-4 px-2 text-white font-medium rounded-lg bg-black border border-gray-800" />
                             <small v-if="statusPass" class=" text-red-500 text-xs">Password does not match</small>
+                            <small v-if="invaild" class=" text-red-500 text-xs">Email/Password is invaild</small>
                         </div>
                     </div>
                     <div class="btn w-full flex flex-col justify-center">
@@ -199,7 +200,8 @@ export default {
                 password: '',
                 confirm_password: '',
             },
-            signInPage: false
+            signInPage: false,
+            invaild: false
         };
     },
     computed: {
@@ -251,16 +253,18 @@ export default {
             this.passError = this.user.email == "" ? ref('red') : ''
             this.conError = this.user.password == "" ? ref('red') : ''
 
-            axios.post('http://localhost:8000/api/user/login', { email: this.user.email, password: this.user.password })
+            if(this.user.email != '' && this.user.password){
+                axios.post('http://localhost:8000/api/user/login', { email: this.user.email, password: this.user.password })
                 .then(res => {
                     this.storeData(res);
                     let token = localStorage.getItem('token')
-                    if (token === 'null') {
-                        this.close()
+                    if (token == 'null') {
+                        this.invaild = true
                     } else {
                         this.$router.push('/home')
                     }
                 });
+            }           
         },
         storeData(res) {
             this.$store.dispatch('userData', res.data.user);
