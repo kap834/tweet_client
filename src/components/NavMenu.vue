@@ -24,28 +24,34 @@
                 <div class="home flex items-center">
                     <router-link to="/notifications">
                         <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
-                        <i class="fa-solid fa-bell w-12 text-2xl"></i>
-                        <h1>Notifications</h1>
-                    </div>
+                            <i class="fa-solid fa-bell w-12 text-2xl"></i>
+                            <h1>Notifications</h1>
+                        </div>
                     </router-link>
                 </div>
                 <div class="home flex items-center">
-                    <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
-                        <i class="fa-regular fa-envelope w-12 text-2xl"></i>
-                        <h1 class="">Messages</h1>
-                    </div>
+                    <router-link to="/messages">
+                        <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
+                            <i class="fa-regular fa-envelope w-12 text-2xl"></i>
+                            <h1 class="">Messages</h1>
+                        </div>
+                    </router-link>
                 </div>
                 <div class="home flex items-center">
-                    <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
-                        <i class="fa-solid fa-table-list w-12 text-2xl"></i>
-                        <h1 class="">Lists</h1>
-                    </div>
+                    <router-link to="/lists">
+                        <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
+                            <i class="fa-solid fa-table-list w-12 text-2xl"></i>
+                            <h1 class="">Lists</h1>
+                        </div>
+                    </router-link>
                 </div>
                 <div class="home flex items-center">
-                    <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
-                        <i class="fa-regular fa-bookmark w-12 text-2xl"></i>
-                        <h1 class="">Bookmarks</h1>
-                    </div>
+                    <router-link to="/bookmarks">
+                        <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
+                            <i class="fa-regular fa-bookmark w-12 text-2xl"></i>
+                            <h1 class="">Bookmarks</h1>
+                        </div>
+                    </router-link>
                 </div>
                 <div class="home flex items-center">
                     <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
@@ -73,11 +79,12 @@
                 </div>
             </div>
             <div class="btn w-[90%] mt-2">
-                <button
-                    class=" py-3 w-full font-bold text-xl text-white bg-blue-500 hover:opacity-90 rounded-3xl">Post</button>
+                <button class=" py-3 w-full font-bold text-xl text-white bg-blue-500 hover:opacity-90 rounded-3xl">Post
+                </button>
             </div>
         </div>
-        <div class="profile flex justify-between items-center w-full p-2 hover:bg-white hover:bg-opacity-10 rounded-full relative mb-3">
+        <div
+            class="profile flex justify-between items-center w-full p-2 hover:bg-white hover:bg-opacity-10 rounded-full relative mb-3">
             <div class="logo flex gap-2 items-center text-white w-full">
                 <img class="w-[18%] rounded-full" src="../assets/images/icon.png" alt="" />
                 <div class="name">
@@ -99,7 +106,7 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
     name: 'NavMenu',
     data() {
@@ -112,8 +119,8 @@ export default {
     computed: {
         ...mapGetters(['getUser'])
     },
-    mounted () {
-        const user = JSON.parse(localStorage.getItem('user')) 
+    mounted() {
+        const user = JSON.parse(localStorage.getItem('user'))
         this.user = user
     },
     methods: {

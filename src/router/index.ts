@@ -4,6 +4,10 @@ import HomePage from '../views/HomePage.vue'
 import ExplorePage from '../views/ExplorePage.vue'
 import NotificationsPage from '../views/NotificationsPage.vue'
 import VerifiedPage from '@/components/VerifiedPage.vue'
+import MentionPage from '@/components/MentionPage.vue'
+import MessagePage from '../views/MessagePage.vue'
+import ListPage from '../views/ListPage.vue'
+import BookMark from '../views/BookMark.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -50,6 +54,38 @@ const routes: Array<RouteRecordRaw> = [
     path: '/notifications/verified',
     name: 'notificationsVerified',
     component: VerifiedPage,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/notifications/mentions',
+    name: 'notificationsMentions',
+    component: MentionPage,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/messages',
+    name: 'messages',
+    component: MessagePage,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/lists',
+    name: 'lists',
+    component: ListPage,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/bookmarks',
+    name: 'bookmarks',
+    component: BookMark,
     meta: {
       requiresAuth: true
     }

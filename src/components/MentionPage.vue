@@ -15,8 +15,7 @@
                     <div class="messages w-full">
                         <div class=" w-[60%] h-full mx-auto text-white flex flex-col gap-2 my-5">
                             <h1 class=" font-bold text-4xl">Nothing to see here — yet</h1>
-                            <p class=" text-white text-opacity-60 font-normal text-sm">From likes to reposts and a whole lot
-                                more, this is where all the action happens.</p>
+                            <p class=" text-white text-opacity-60 font-normal text-sm">When someone mentions you, you’ll find it here.</p>
                         </div>
                     </div>
                 </div>
@@ -31,7 +30,7 @@ import NavMenu from "@/components/NavMenu.vue";
 import RightSide from "@/components/RightSide.vue";
 import NotiBar from "@/components/NotiBar.vue";
 export default {
-    name: 'NotificationsPage',
+    name: 'MentionPage',
     components: {
         NavMenu, RightSide, NotiBar
     },

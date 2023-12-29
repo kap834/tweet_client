@@ -10,19 +10,20 @@
                 </div>
                 <div
                     class="for relative w-[50%] h-full flex items-center justify-center font-bold hover:bg-white hover:bg-opacity-10">
-                    <button class=" w-full">Following</button>
+                    <div class=" h-full border-b-4 border-b-transparent flex items-center">
+                        <button>Following</button>
+                    </div>
                 </div>
             </div>
             <div class="setting w-[10%] text-white flex items-center justify-center">
                 <button><i class="fa-solid fa-gear hover:bg-white hover:bg-opacity-10 rounded-full p-3"></i></button>
             </div>
         </div>
-        <div class="post-area flex w-full h-auto p-4 border-b border-gray-800 gap-4">
+        <div class="post-area flex w-full h-auto px-4 pt-4 pb-3 border-b border-gray-800 gap-4">
             <img class="w-[7%] h-[7%] rounded-full" src="../assets/images/icon.png" alt="" />
             <div class="features w-full h-auto flex flex-col items-center">
-                <input class="font-normal w-full h-auto text-xl outline-none border-none bg-transparent text-white" type="text"
-                    placeholder="What is happing?!">
-                <div class="post-feature flex justify-between items-center mt-3 w-full text-blue-500 ">
+                <MyTextarea v-model="postInput" />
+                <div class="post-feature flex justify-between items-center mt-5 w-full text-blue-500 ">
                     <div class=" flex gap-6 cursor-pointer">
                         <i class="fa-regular fa-image"></i>
                         <i class="fa-solid fa-bars-staggered"></i>
@@ -30,7 +31,7 @@
                         <i class="fa-regular fa-calendar"></i>
                     </div>
                     <div class="post-btn">
-                        <button
+                        <button @click="post()"
                             class=" bg-blue-500 hover:opacity-90 px-4 py-2 font-bold rounded-full text-white">Post</button>
                     </div>
                 </div>
@@ -240,9 +241,22 @@
 </template>
 
 <script>
+import MyTextarea from '@/components/MyTextarea.vue'
 export default {
-    name: 'PostSection'
+    name: 'PostSection',
+    components: {
+        MyTextarea,
+    },
+    data() {
+        return {
+            postInput: ''
+        }
+    },
+    methods: {
+        post() {
+            console.log(this.postInput);
+        }
+
+    },
 }
 </script>
-
-<style lang="scss" scoped></style>

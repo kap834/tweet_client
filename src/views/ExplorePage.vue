@@ -9,7 +9,7 @@
                             <div
                             class="search flex items-center gap-3 text-gray-500 p-2 pl-5 bg-white bg-opacity-10 w-full rounded-full">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <input class=" outline-none border-none bg-transparent" type="text" placeholder="Search">
+                            <input class=" outline-none border-none bg-transparent w-full" type="text" placeholder="Search">
                         </div>
                         </div>
                         <div class="setting w-[10%] text-white flex items-center justify-center">
