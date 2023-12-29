@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import LoginPage from '../views/LoginPage.vue'
 import HomePage from '../views/HomePage.vue'
+import ExplorePage from '../views/ExplorePage.vue'
+import NotificationsPage from '../views/NotificationsPage.vue'
+import VerifiedPage from '@/components/VerifiedPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -23,6 +26,30 @@ const routes: Array<RouteRecordRaw> = [
     path: '/home',
     name: 'home',
     component: HomePage,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/explore',
+    name: 'explore',
+    component: ExplorePage,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/notifications',
+    name: 'notifications',
+    component: NotificationsPage,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/notifications/verified',
+    name: 'notificationsVerified',
+    component: VerifiedPage,
     meta: {
       requiresAuth: true
     }

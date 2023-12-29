@@ -270,6 +270,7 @@ export default {
             this.$store.dispatch('userData', res.data.user);
             this.$store.dispatch('userToken', res.data.token);
             localStorage.setItem('token', this.getToken)
+            localStorage.setItem('user', JSON.stringify(this.getUser))
         }
     },
 };
