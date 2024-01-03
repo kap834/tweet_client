@@ -8,6 +8,9 @@ import MentionPage from '@/components/MentionPage.vue'
 import MessagePage from '../views/MessagePage.vue'
 import ListPage from '../views/ListPage.vue'
 import BookMark from '../views/BookMark.vue'
+import CommuNities from '../views/CommuNities.vue'
+import PremiumPage from '../views/PremiumPage.vue'
+import ProfilePage from '../views/ProfilePage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -86,6 +89,30 @@ const routes: Array<RouteRecordRaw> = [
     path: '/bookmarks',
     name: 'bookmarks',
     component: BookMark,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/communites',
+    name: 'communites',
+    component: CommuNities,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/premium',
+    name: 'premium',
+    component: PremiumPage,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: ProfilePage,
     meta: {
       requiresAuth: true
     }

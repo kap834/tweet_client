@@ -38,7 +38,7 @@
                             <div
                             class="info px-4 flex items-center justify-between py-2 w-full hover:bg-white hover:bg-opacity-5">
                             <div class="detail flex items-center gap-4">
-                                <img class="w-[45px] h-[45px] rounded-xl object-fill object-center"
+                                <img class="w-[45px] h-[45px] rounded-xl object-cover object-center"
                                     src="https://pbs.twimg.com/media/EXZ22fjU8AAau2G?format=png&name=240x240" alt="" />
                                 <div class="name flex flex-col gap-1">
                                     <h1 class=" font-bold text-sm">News <span class=" text-xs text-white text-opacity-70">-
@@ -53,7 +53,7 @@
                         <div
                             class="info px-4 flex items-center justify-between py-2 w-full hover:bg-white hover:bg-opacity-5">
                             <div class="detail flex items-center gap-4">
-                                <img class="w-[45px] h-[45px] rounded-xl object-fill object-center"
+                                <img class="w-[45px] h-[45px] rounded-xl object-cover object-center"
                                     src="https://pbs.twimg.com/media/EXZ22fjU8AAau2G?format=png&name=240x240" alt="" />
                                 <div class="name flex flex-col gap-1">
                                     <h1 class=" font-bold text-sm">Climate change <span class=" text-xs text-white text-opacity-70">-
@@ -68,7 +68,7 @@
                         <div
                             class="info px-4 flex items-center justify-between py-2 w-full hover:bg-white hover:bg-opacity-5">
                             <div class="detail flex items-center gap-4">
-                                <img class="w-[45px] h-[45px] rounded-xl object-fill object-center"
+                                <img class="w-[45px] h-[45px] rounded-xl object-cover object-center"
                                     src="https://pbs.twimg.com/media/EXZ22fjU8AAau2G?format=png&name=240x240" alt="" />
                                 <div class="name flex flex-col gap-1">
                                     <h1 class=" font-bold text-sm">Southeast Asia <span class=" text-xs text-white text-opacity-70">-

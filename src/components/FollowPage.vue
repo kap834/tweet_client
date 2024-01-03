@@ -8,7 +8,7 @@
                         <img class="w-[18%] rounded-full" src="../assets/images/icon.png" alt="" />
                         <div class="name">
                             <h1 class=" font-bold">Myanmar Now</h1>
-                            <p class=" text-base text-white text-opacity-80">@myanmarnow</p>
+                            <p class=" text-base text-white text-opacity-50">@myanmarnow</p>
                         </div>
                     </div>
                     <div class="more">
@@ -20,7 +20,7 @@
                         <img class="w-[18%] rounded-full" src="../assets/images/icon.png" alt="" />
                         <div class="name">
                             <h1 class=" font-bold">Myanmar Now</h1>
-                            <p class=" text-base text-white text-opacity-80">@myanmarnow</p>
+                            <p class=" text-base text-white text-opacity-50">@myanmarnow</p>
                         </div>
                     </div>
                     <div class="more">

@@ -1,7 +1,7 @@
 <template>
     <div class=" bg-black w-[20%] sticky top-0 h-screen flex flex-col justify-between border-r border-gray-800 px-3">
         <div class="menu mt-4">
-            <div class="flex flex-col font-bold text-xl text-white cursor-pointer">
+            <div class="flex flex-col font-bold text-xl text-white cursor-pointer relative">
                 <div class="logo text-white w-[18%] border border-gray-400 rounded-full p-[6px] mb-2">
                     <img class="w-full" src="../assets/images/social.png" alt="" />
                 </div>
@@ -54,29 +54,30 @@
                     </router-link>
                 </div>
                 <div class="home flex items-center">
-                    <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
-                        <i class="fa-solid fa-users w-12 text-2xl"></i>
-                        <h1 class="">Communities</h1>
-                    </div>
+                    <router-link to="/communites">
+                        <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
+                            <i class="fa-solid fa-users w-12 text-2xl"></i>
+                            <h1 class="">Communities</h1>
+                        </div>
+                    </router-link>
                 </div>
                 <div class="home flex items-center">
-                    <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
-                        <i class="fa-solid fa-crown w-12 text-2xl"></i>
-                        <h1 class="">Premium</h1>
-                    </div>
+                    <router-link to="/premium">
+                        <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
+                            <i class="fa-solid fa-crown w-12 text-2xl"></i>
+                            <h1 class="">Premium</h1>
+                        </div>
+                    </router-link>
                 </div>
                 <div class="home flex items-center">
-                    <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
-                        <i class="fa-regular fa-user w-12 text-2xl"></i>
-                        <h1 class="">Profile</h1>
-                    </div>
+                    <router-link to="/profile">
+                        <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
+                            <i class="fa-regular fa-user w-12 text-2xl"></i>
+                            <h1 class="">Profile</h1>
+                        </div>
+                    </router-link>
                 </div>
-                <div class="home flex items-center">
-                    <div class="hover:bg-white hover:bg-opacity-10 rounded-full flex p-2 pr-5">
-                        <i class="fa-solid fa-ellipsis w-12 text-2xl"></i>
-                        <h1 class="">More</h1>
-                    </div>
-                </div>
+                <MoreBtn/>
             </div>
             <div class="btn w-[90%] mt-2">
                 <button class=" py-3 w-full font-bold text-xl text-white bg-blue-500 hover:opacity-90 rounded-3xl">Post
@@ -98,26 +99,31 @@
             <div v-if="!menuStatus" @click="closeMenu()" class=" text-white cursor-pointer w-4">
                 <i class="fa-solid fa-xmark"></i>
             </div>
-            <div v-if="logoutMenu" class="menu absolute w-[90%] bg-black rounded-lg top-[-3rem] border border-gray-800 p-2">
-                <button @click="logout()" class=" text-white font-bold">Logout</button>
+            <div v-if="logoutMenu" class="menu absolute w-full bg-black rounded-xl top-[-7rem] border border-gray-800 shadow-md shadow-gray-800">
+                <div class="flex flex-col py-2">
+                    <p @click="logout()" class=" text-white w-full px-3 py-2 font-bold hover:bg-white hover:bg-opacity-10">Add an existing account</p>
+                    <p @click="logout()" class=" text-white w-full px-3 py-2 font-bold hover:bg-white hover:bg-opacity-10">Log out @codin00</p>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import MoreBtn from '@/components/MoreBtn.vue'
+
 export default {
     name: 'NavMenu',
+    components: {
+        MoreBtn,
+    },
     data() {
         return {
             logoutMenu: false,
+            morePage: false,
             menuStatus: true,
             user: ''
         }
-    },
-    computed: {
-        ...mapGetters(['getUser'])
     },
     mounted() {
         const user = JSON.parse(localStorage.getItem('user'))
@@ -136,7 +142,7 @@ export default {
         closeMenu() {
             this.logoutMenu = false
             this.menuStatus = true
-        }
+        },
     },
 }
 </script>

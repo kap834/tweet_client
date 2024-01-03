@@ -7,8 +7,7 @@
                     <div class="nav sticky bg-black top-0 flex items-center justify-between w-full h-[3.5rem] px-3">
                         <h1 class=" font-bold text-white text-xl pl-3">Notifications</h1>
                         <div class="setting text-white">
-                            <button><i
-                                    class="fa-solid fa-gear hover:bg-white hover:bg-opacity-10 rounded-full p-3"></i></button>
+                            <button><i class="fa-solid fa-gear hover:bg-white hover:bg-opacity-10 rounded-full p-3"></i></button>
                         </div>
                     </div>
                     <NotiBar />

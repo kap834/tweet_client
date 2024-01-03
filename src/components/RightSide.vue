@@ -3,7 +3,7 @@
         <div class=" w-full py-2 px-5 bg-black h-[4rem]">
             <div class="search flex items-center gap-3 text-gray-500 p-3 pl-5 bg-white bg-opacity-10 w-full rounded-full">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input class=" outline-none border-none bg-transparent" type="text" placeholder="Search">
+                <input class=" outline-none border-none bg-transparent w-full" type="text" placeholder="Search">
             </div>
         </div>
         <div class="third flex flex-col gap-3 w-full h-auto px-5 py-2">
@@ -63,7 +63,7 @@
                         <img class="w-[18%] rounded-full" src="../assets/images/icon.png" alt="" />
                         <div class="name">
                             <h1 class=" font-bold">Myanmar Now</h1>
-                            <p class=" text-base text-white text-opacity-80">@myanmarnow</p>
+                            <p class=" text-base text-white text-opacity-50">@myanmarnow</p>
                         </div>
                     </div>
                     <div class="more">
@@ -75,7 +75,7 @@
                         <img class="w-[18%] rounded-full" src="../assets/images/icon.png" alt="" />
                         <div class="name">
                             <h1 class=" font-bold">Myanmar Now</h1>
-                            <p class=" text-base text-white text-opacity-80">@myanmarnow</p>
+                            <p class=" text-base text-white text-opacity-50">@myanmarnow</p>
                         </div>
                     </div>
                     <div class="more">

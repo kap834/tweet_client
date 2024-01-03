@@ -23,9 +23,13 @@
             <img class="w-[7%] h-[7%] rounded-full" src="../assets/images/icon.png" alt="" />
             <div class="features w-full h-auto flex flex-col items-center">
                 <MyTextarea v-model="postInput" />
+                <img :src="imagePreview" class=" mt-5 rounded-xl"/>
                 <div class="post-feature flex justify-between items-center mt-5 w-full text-blue-500 ">
-                    <div class=" flex gap-6 cursor-pointer">
-                        <i class="fa-regular fa-image"></i>
+                    <div class=" flex gap-6 cursor-pointer items-center">
+                        <label for="doc">
+                            <i class="fa-regular fa-image"></i>
+                            <input type="file" @change="previewImage" hidden id="doc"/> 
+                        </label>
                         <i class="fa-solid fa-bars-staggered"></i>
                         <i class="fa-regular fa-face-smile"></i>
                         <i class="fa-regular fa-calendar"></i>
@@ -249,14 +253,23 @@ export default {
     },
     data() {
         return {
-            postInput: ''
+            postInput: '',
+            imagePreview: null,
         }
     },
     methods: {
         post() {
             console.log(this.postInput);
-        }
-
+        },
+        previewImage(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                this.imagePreview = reader.result;
+            };
+        },
     },
+
 }
 </script>
