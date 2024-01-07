@@ -1,11 +1,9 @@
 <template>
-    <div>
-        <div class="main w-full h-screen bg-black fixed overflow-y-scroll inset-0">
-            <div class=" w-[85%] mx-auto flex">
-                <NavMenu/>
-                <PostSection/>
-                <RightSide/>
-            </div>
+    <div class="main w-full h-screen bg-black fixed overflow-y-scroll inset-0">
+        <div class=" w-[85%] mx-auto flex">
+            <NavMenu />
+            <PostSection />
+            <RightSide />
         </div>
     </div>
 </template>
@@ -17,7 +15,7 @@ import PostSection from "@/components/PostSection.vue";
 export default {
     name: 'HomePage',
     components: {
-        NavMenu,RightSide,PostSection
+        NavMenu, RightSide, PostSection
     },
 }
 </script>
